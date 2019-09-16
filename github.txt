@@ -1,0 +1,39 @@
+	1.git init命令把这个目录变成Git可以管理的仓库：
+		git init
+		Initialized empty Git repository in /Users/michael/learngit/.git/
+	2.命令git add告诉Git，把文件添加到仓库
+		git add readme.txt
+	3.命令git commit告诉Git，把文件提交到仓库
+		git commit -m "wrote a readme file"
+	
+	4.版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用git log命令查看
+	5.退回上一个版本
+	
+		git reset --hard HEAD^
+		
+		cmd控制台中换行符默认是 ^ ，而不是\ ，所以它的 more？的意思是问你下一行是否需要再输入，而 ^ 符号就被当做换行符而被 git 命令忽略掉了。
+		解决方法有如下几种：
+		方法一：加引号：git reset --hard “HEAD^”
+		方法二：加一个^：git reset --hard HEAD^^
+		方法三：换成~：git reset --hard HEAD~ 或者 git reset --hard HEAD~1
+		~ 后面的数字表示回退几次提交（上面1次为例）
+	6.git reset --hard 指定版本号
+	
+	7.用git remote -v查看远程库信息
+	
+	8.删除已有的GitHub远程库    git remote rm origin
+	
+	9.合并  git pull --rebase origin master
+	
+	10.码云账号：sen-bai		密码：ysw45w46
+	   
+	   
+	 11.同时关联GitHub和码云
+			git remote rm origin（清除关联信息）
+			git remote add github git@github.com:sen-bai/sen-arduino.git（先关联GitHub）
+			git remote add gitee git@gitee.com:sen-bai/sen-arduino.git（再关联码云）
+			
+		推送到码云，使用命令		git push gitee master   git push -u origin master	
+		推送到GitHub，使用命令		git push github master
+	   
+	   
